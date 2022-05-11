@@ -1,0 +1,382 @@
+.header{
+    color: #03fc0b;
+}
+
+.background{
+    background-color: #212121;
+    color: white;
+}
+
+
+
+
+/* Movie page */
+.movie-info-div {
+    background-color: #212121;
+    margin-left: 14%;
+ /* margin-right: 20%;*/
+    margin-top: 50px;
+    display: flex;
+
+
+
+}
+
+
+.movie-div{
+    outline: 4px solid red;
+    height: 550px;
+    border-radius: 10pt;
+    box-shadow: 2px 2px 25px #03b1fc;
+}
+
+.movie-title{
+    display: flex;
+    margin-left: 1175px;
+    width: 240px;
+    height: 35px;
+    position: relative;
+    bottom: 325px;
+}
+.movie-title:hover{
+    color: red;
+    cursor: default;
+}
+
+.movie-info{
+    width: 370px;
+    height: 100px;
+    position: relative;
+    left: 325px;
+    bottom: 300px;
+}
+
+.movie-desc{
+    width: 900px;
+    position: relative;
+    left: 325px;
+    bottom: 250px;
+}
+
+
+.age-rating{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 100px;
+    bottom: 40px;
+}
+
+.footer{
+    position: relative;
+    bottom: 239px;
+    left: 20px;
+}
+
+.images:hover{
+    box-shadow: 5px 5px 50px white;
+    transform: scale(0.8);
+}
+
+.img1{
+	width:  300px;
+	height: 300px;
+	border: 5px solid rgb(59, 59, 59);
+	transition: transform 1s;
+}
+
+
+
+/*Back to top button*/
+.to-top {
+  background: white;
+  position: fixed;
+  bottom: 16px;
+  right:32px;
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:32px;
+  color:#1f1f1f;
+  text-decoration: none;
+  opacity:0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.to-top.active {
+  bottom:32px;
+  pointer-events: auto;
+  opacity:1;
+}
+
+
+
+
+/* Profile */
+.dp-div{
+    width: 300px;
+    height: 330px;
+    padding-left: 830px;
+    padding-top: 50px;
+
+}
+
+.dp{
+    width: 250px;
+}
+
+
+.current-user-div{
+    width: 30px;
+    height: 50px;
+    padding-left: 910px;
+
+}
+
+#current-user{
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+.txt-change:hover{
+    color: red;
+}
+
+.profile-btn{
+    font-weight: bold;
+    width: 400px;
+    height: 50px;
+    background-color: #ffffff;
+}
+
+
+.btn-change:hover{
+    background-color: #4bb8b8;
+}
+
+
+
+
+
+
+
+
+ Pop up modal in group page
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.modal-content {
+  background-color: rgb(33, 38, 56);
+  margin: 10% auto;
+  height: 60%;
+  width: 60%;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  animation-name: modalopen;
+  animation-duration: 1.5s;
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  background: var(--modal-color);
+  padding: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  background: #12141a;
+
+}
+
+ .modal-footer {
+  background: var(--modal-color);
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+
+.close {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+
+}
+
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* Star Rating system in movie page*/
+
+.rating{
+    position: relative;
+    left: 350px;
+    bottom: 30px;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    display: flex;
+    margin: 0;
+    height: 30px;
+
+}
+.rating input{
+    display: none;
+}
+
+.rating label{
+    display: block;
+    cursor: pointer;
+    width: 40px;
+    background: #212121;
+
+}
+.rating label:before{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 30px;
+    color: #101010;
+
+}
+.rating label:after{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 30px;
+    color: #ffcc00;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+
+}
+.rating label:hover:after,
+.rating label:hover ~ label:after,
+.rating input:checked ~ label:after{
+    opacity: 1;
+}
+
+
+
+
+
+
+/* Button styling in movie page */
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+}
+
+.more-info {
+    margin-top: 10px;
+    margin-left: 70px;
+	width: 150px;
+	height: 30px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #7f5a83;
+	background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+	background-size: 200% 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: 500ms;
+}
+
+.more-info:before {
+	color: rgba(255,255,255,0.5);
+	font-size: 16px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 40px;
+	background-color: #1b2845;
+	background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+	transition: 500ms;
+}
+
+.more-info:hover {
+	background-position: right;
+}
+
+.more-info:hover:before {
+	color: rgba(255,255,255,0.8);
+}
+
+.more-info:focus {
+	outline: none;
+}
+
+
+
+
+/* remove group button */
+#remove-group{
+    background-color: red;
+}
+
+
+#movie-reco-button{
+    display: flex;
+    padding-left: 5%;
+}
+
+
+#movie-reco-h6{
+    color: #ffb300;
+    display: relative;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+

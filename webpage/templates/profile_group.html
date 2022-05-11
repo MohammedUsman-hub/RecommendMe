@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Your Groups
+{% endblock %}
+
+
+{% block content %}
+
+
+<h3 style="color:red; position: relative; left: 5%;">Create A Group:</h3>
+<br>
+<!--Creating group with Flask forms-->
+<div class="">
+    <form method="POST">
+        {{ create.hidden_tag() }}
+
+        {{ create.grouptitle.label() }}
+        {{ create.grouptitle(class="", placeholder="Group Name") }}
+
+        {{ create.members.label() }}
+        {{ create.members(class="", placeholder="Group Members") }}
+
+        {{ create.numofmem.label() }}
+        {{ create.numofmem(class="", placeholder="Number Of Members") }}
+
+        {{ create.datecreated.label() }}
+        {{ create.datecreated(class="", placeholder="Date Created") }}
+
+        {{ create.submit(class="") }}
+    </form>
+</div>
+<br>
+
+<!--Table -->
+    <table class="table table-hover table-dark"  id="remove-group">
+        <thead>
+            <tr>
+                <!-- Columns  -->
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Members</th>
+                <th scope="col">Number Of Members</th>
+                <th scope="col">Date Created</th>
+                <th scope="col">Option</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <!--  rows inside the table: -->
+        {% for group in groups %}
+            <tr>
+                <td>{{ group.id }}</td>
+                <td>{{ group.grouptitle }}</td>
+                <td>{{ group.members }}</td>
+                <td>{{ group.numofmem }}</td>
+                <td>{{ group.datecreated }}</td>
+                <td>
+                    <button class="btn btn-outline btn-success" onclick="deleteRow(this)">Delete Group</button>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<script>
+function deleteRow(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("remove-group").deleteRow(i);
+}
+</script>
+
+
+{% endblock %}

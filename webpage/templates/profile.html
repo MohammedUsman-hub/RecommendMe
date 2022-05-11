@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    profile Page
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Profile pic -->
+<div class="dp-div">
+    <img class="dp" src="{{ url_for('static', filename='images/dp.jpg') }}">
+</div>
+
+<!-- User Name -->
+<div class="current-user-div">
+    <p1 id="current-user" class="txt-change">
+        {{ current_user.username }}
+    </p1>
+</div>
+
+
+<!-- Movie recommendation, event recommendation, groups -->
+<div>
+    <!-- Movie -->
+    <div style="padding-left: 750px;">
+        <a href="{{ url_for('movie_recommendation') }}"><button type="button" class="profile-btn btn-change">Your Movie Recommendation</button></a>
+    </div>
+
+    <!-- Event -->
+    <div style="padding-top: 20px; padding-left: 750px;">
+        <a href="{{ url_for('event_recommendation') }}"><button type="button" class="profile-btn btn-change">Your Event Recommendation</button></a>
+    </div>
+
+    <!-- Groups -->
+    <div style="padding-top: 20px; padding-left: 750px;">
+        <a href="{{ url_for('profile_group') }}"><button type="button" class="profile-btn btn-change">Your Groups</button></a>
+    </div>
+
+
+</div>
+{% endblock %}

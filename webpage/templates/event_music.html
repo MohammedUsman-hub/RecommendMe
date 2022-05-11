@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Events Concert Recommendation Page
+{% endblock %}
+
+
+{% block content %}
+<h6 id="movie-reco-h6">Get recommended your favourite type of event: </h6>
+
+
+<div id="movie-reco-button">
+
+    <a style="color:white;" class="more-info noselect" href="{{ url_for('event_music') }}">Concert</a>
+    <a style="color:white;" class="more-info noselect" href="{{ url_for('event_social') }}">Social</a>
+
+
+</div>
+
+
+<br>
+   <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">Type</th>
+                <th scope="col">Date/Time</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <!-- table row: -->
+            {% for music in musics %}
+                <tr>
+                    <td>{{ music.id }}</td>
+                    <td>{{ music.name }}</td>
+                    <td>{{ music.location }}</td>
+                    <td>{{ music.type }}</td>
+                    <td>{{ music.datetime }}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

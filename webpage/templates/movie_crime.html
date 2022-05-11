@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Movie crime recommendation Page
+{% endblock %}
+
+
+{% block content %}
+<h6 id="movie-reco-h6">Get recommended your favourite genre: </h6>
+
+
+<div id="movie-reco-button">
+
+    <a style="color:white;" class="more-info noselect" href="{{ url_for('movie_family') }}">Family</a>
+    <a style="color:white;" class="more-info noselect" href="{{ url_for('movie_crime') }}">Crime</a>
+    <a style="color:white;" class="more-info noselect" href="{{ url_for('movie_comedy') }}">Comedy</a>
+    <a style="color:white;" class="more-info noselect" href="{{ url_for('movie_thriller') }}">Thriller</a>
+    <a style="color:white;" class="more-info noselect" href="{{ url_for('movie_fantasy') }}">Fantasy</a>
+    <a style="color:white;" class="more-info noselect" type="button"href="{{ url_for('movie_action') }}" >Action</a>
+    <a style="color:white;" class="more-info noselect" href="{{ url_for('movie_drama') }}">Drama</a>
+
+</div>
+
+
+<br>
+
+
+
+
+
+<table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <!-- Columns for table -->
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Age</th>
+                <th scope="col">Release Date</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows -->
+           {% for crime in crimes %}
+                <tr>
+                    <td>{{ crime.id }}</td>
+                    <td>{{ crime.name }}</td>
+                    <td>{{ crime.genre }}</td>
+                    <td>{{ crime.age }}</td>
+                    <td>{{ crime.date }}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+
+ </div>
+{% endblock %}
