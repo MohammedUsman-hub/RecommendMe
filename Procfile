@@ -1,1 +1,1 @@
-web: gunicorn recommendme:run
+web: gunicorn run:app
