@@ -1,7 +1,0 @@
-wtforms
-flask
-flask-wtf
-SQLAlchemy
-pymysql
-pandas
-requests
